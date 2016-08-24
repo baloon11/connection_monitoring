@@ -18,7 +18,7 @@ This script can be run manually:
 or using cron job:  
   In crontab add this line:
   
-     * * * * * /path/to/virtualenv/bin/python python path_to_directoty/monitor.py
+     * * * * * /path/to/virtualenv/bin/python path_to_directoty/monitor.py
 
 and the script will run every 1 minute.  
 (Do not forget change the path)  
