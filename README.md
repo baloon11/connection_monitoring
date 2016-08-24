@@ -1,4 +1,4 @@
-#### This script solves the task of checking network connection.
+#### This script solves the task of checking network connection on the server.
 If connection is lost -- it creates `out` file and writes info about lost connection in it.  
 This info it gets from /var/log/syslog   
 It gets 100 latest lines from this file and  
