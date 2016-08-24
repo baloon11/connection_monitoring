@@ -1,6 +1,7 @@
 # coding: utf-8
 import socket
 import os
+import time
 import datetime
 from peewee import *
 import sqlite3 as lite
@@ -58,7 +59,10 @@ def main():
         connection_status(connection=True)
     except Exception, e:
         print e
-        if Status.get(Status.id == 1).connection:#connection==True
+        #connection==True in DB 
+        #but now the server lost network connection
+        if Status.get(Status.id == 1).connection:
+            time.sleep(60)
             curr_time= datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             #getting 100 last lines from /var/log/syslog and filtered by NetworkManager and eth0
             raw_syslog=[raw_line for raw_line in open('/var/log/syslog','r')][-100:]
